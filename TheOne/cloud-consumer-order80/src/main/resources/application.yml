@@ -1,14 +1,10 @@
 server:
-  port: 8001
+  port: 8000
 
 spring:
   application:
-    name: cloud-payment-service
-  profiles:
-    active: prod
-mybatis:
-  mapperLocations: classpath:mapper/*.xml
-  type-aliases-package: com.jikaigg.springcloud.entities    #所有Entity别名类所在包
+    name: cloud-order-service
+
 eureka:
   client:
     #表示是否注册到eureka客户端
