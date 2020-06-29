@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 @RestController
 @Slf4j
 public class PaymentController {
-    @Autowired
+    @Resource
     private PaymentService paymentService;
 
     @PostMapping(value = "/payment/create")
