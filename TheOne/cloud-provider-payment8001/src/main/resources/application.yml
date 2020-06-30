@@ -5,7 +5,7 @@ spring:
   application:
     name: cloud-payment-service
   profiles:
-    active: prod
+    active: dev
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.jikaigg.springcloud.entities    #所有Entity别名类所在包
