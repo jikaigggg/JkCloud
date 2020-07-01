@@ -8,3 +8,9 @@ CREATE TABLE `payment`(
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8;
 ```
 
+
+
+
+### ubuntu修改hosts
+vim /etc/hosts
+
