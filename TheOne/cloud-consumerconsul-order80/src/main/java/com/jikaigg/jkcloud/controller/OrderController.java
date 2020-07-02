@@ -3,21 +3,19 @@ package com.jikaigg.jkcloud.controller;
 import com.jikaigg.jkcloud.entities.CommonResult;
 import com.jikaigg.jkcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import javax.xml.stream.events.Comment;
 
 @RestController
 @Slf4j
 public class OrderController {
     // public static final String PAYMENT_URL = "http://localhost:8001";
-    // 集群请求地址不再写死，而是写成服务名称
-    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
+    // 集群请求地址不再写死，而是写成服务名称 url的服务名称一定和注册中心注册的服务名一直，严格区分大小写
+    public static final String PAYMENT_URL = "http://cloud-payment-service";
 
     @Resource
     private RestTemplate restTemplate;
@@ -32,8 +30,8 @@ public class OrderController {
         return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
     }
 
-    @GetMapping("/consumer/payment/zk")
-    public String paymentINfo(){
-        return restTemplate.getForObject(PAYMENT_URL+"/payment/zk",String.class);
+    @GetMapping("/consumer/payment/consul")
+    public String paymentInfo(){
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/consul",String.class);
     }
 }

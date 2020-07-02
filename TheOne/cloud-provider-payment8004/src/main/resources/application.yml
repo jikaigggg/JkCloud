@@ -1,0 +1,14 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: cloud-payment-service
+  profiles:
+    active: prod
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.jikaigg.springcloud.entities    #所有Entity别名类所在包
