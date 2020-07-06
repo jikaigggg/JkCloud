@@ -33,7 +33,7 @@ public class GsonTest01 {
     @Test
     public void objectToJson() {
         String s1 = gsonb.toJson(payment);
-        System.out.println("原始对象为:  "+payment);
+        System.out.println("原始对象为:  " + payment);
         System.out.println("对象转成json为:  "+s1);
 
         String s2 = gsonb.toJson(commonResult);
